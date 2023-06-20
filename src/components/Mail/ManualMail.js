@@ -60,6 +60,9 @@ const ManualMail = () => {
     <BasePage>
       <div className="manual">
         <h5>Manual Mail</h5>
+        <p>
+          <b>Note:</b> One Email To Another Email Put On The Comma ( <b>,</b> )
+        </p>
         <div className="card">
           <Form className="form-manual" onSubmit={handleSubmit}>
             {touched.toEmail && errors.toEmail ? (

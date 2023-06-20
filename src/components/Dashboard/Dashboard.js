@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import "./dash.css";
 import BasePage from "../Base/BasePage";
-import dashboard from "../../assets/dashboard.png";
+import dashboard from "../../assets/dashboard.gif";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
       <BasePage>
         <div className="dashboard">
           <h3>Welcome to Bulk Email Tool</h3>
-          <div className="card">
+          <div className="dash-item">
             <img style={{ height: "55%" }} alt="dashboard" src={dashboard} />
             <h4>Email Marketing </h4>
             <p style={{ textAlign: "justify", padding: "15px" }}>

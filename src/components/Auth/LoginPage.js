@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./auth.css";
 import axios from "axios";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import login from "../../assets/login.jpg";
+import login from "../../assets/login.gif";
 import { Link, useNavigate } from "react-router-dom";
 import HeaderPage from "../NavBar/Header";
 import API from "../../url";
@@ -47,6 +47,10 @@ const LoginPage = () => {
       navigate("/login");
     }
   };
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
 
   return (
     <>

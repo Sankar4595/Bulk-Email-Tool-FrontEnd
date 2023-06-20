@@ -5,9 +5,9 @@
     flex-direction: column;
     align-items: center;
 }
-.dashboard>.card{
-    width: 80%;
-    height: 90%;
+.dashboard>.dash-item{
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;

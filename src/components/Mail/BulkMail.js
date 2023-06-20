@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "./index.css";
 import axios from "axios";
@@ -114,7 +115,7 @@ const BulkMail = () => {
   return (
     <BasePage>
       <div className="manual">
-        <h5>Manual Mail</h5>
+        <h3>Bulk Mail</h3>
         <div className="card">
           <Form className="form-manual" onSubmit={handleSubmit}>
             {touched.toEmail && errors.toEmail ? (

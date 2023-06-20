@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import "./auth.css";
 import { useNavigate, Link } from "react-router-dom";
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -9,6 +10,7 @@ import axios from "axios";
 import API from "../../url";
 import { toast } from "react-toastify";
 import HeaderPage from "../NavBar/Header";
+import forgot from "../../assets/forgot.gif";
 
 const LoginSchemaValidation = yup.object({
   email: yup.string().email().required("Please Enter A Valid Email"),
@@ -50,10 +52,13 @@ export default function ForgotPassword() {
     <>
       <HeaderPage />
       <div className="forgot">
-        <div className="formm-outer">
+        <div className="left">
+          <img style={{ width: "70%" }} src={forgot} alt="forgot" />
+        </div>
+        <div className="right">
           {show ? (
             <Form
-              className="formm shadow-lg p-3 mb-5 bg-white rounded"
+              className="formm "
               // onSubmit={handleSubmit}
             >
               <div style={{ textAlign: "center" }}>
@@ -71,13 +76,6 @@ export default function ForgotPassword() {
               </div>
               <div className="login-fields">
                 <Button
-                  style={{
-                    marginTop: "15px",
-                    backgroundColor: "#4e73df",
-                    borderColor: "#4e73df",
-                    color: "#fff",
-                    borderRadius: "20px",
-                  }}
                   variant="primary"
                   type="submit"
                   onClick={() => navigate("/login")}
@@ -87,11 +85,8 @@ export default function ForgotPassword() {
               </div>
             </Form>
           ) : (
-            <Form
-              className="formm shadow-lg p-3 mb-5 bg-white rounded"
-              onSubmit={handleSubmit}
-            >
-              <div style={{ textAlign: "center", fontFamily: "Montserrat" }}>
+            <Form className="formm " onSubmit={handleSubmit}>
+              <div style={{ textAlign: "center" }}>
                 <h2 style={{}}>
                   {" "}
                   {show ? "Check Your Email" : "Forgot Your Password?"}{" "}
@@ -109,7 +104,9 @@ export default function ForgotPassword() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  alignContent: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "20px",
                 }}
               >
                 <TextField
@@ -120,6 +117,7 @@ export default function ForgotPassword() {
                   value={values.email}
                   onChange={handleChange}
                   style={{
+                    width: "70%",
                     marginTop: "20px",
                     fontSize: "15px",
                   }}
