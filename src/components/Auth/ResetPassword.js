@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { Checkbox, TextField } from "@mui/material";
-import { url } from "../../App";
+
 import { toast } from "react-toastify";
 import axios from "axios";
+import API from "../../url";
+import BasePage from "../Base/BasePage";
 import HeaderPage from "../NavBar/Header";
 
 const CreateSchemaValidation = yup.object({
@@ -38,7 +40,7 @@ export default function ResetPassword() {
     let payload = { password };
     let resetToken = localStorage.getItem("resetToken");
     try {
-      let res = await axios.post(`${url}/users/resetPassword`, payload, {
+      let res = await axios.post(`${API}/users/resetPassword`, payload, {
         headers: { Authorization: `Bearer ${resetToken}` },
       });
       // console.log(res);
@@ -55,10 +57,7 @@ export default function ResetPassword() {
       <HeaderPage />
       <div className="login-main">
         <div className="formm-outer">
-          <Form
-            className="formm shadow-lg p-3 mb-5 bg-white rounded"
-            onSubmit={handleSubmit}
-          >
+          <Form className="formm" onSubmit={handleSubmit}>
             <div style={{ textAlign: "center" }}>
               <h2 style={{}}>Reset Your Password Here</h2>
             </div>

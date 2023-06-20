@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import Wave from "react-wavify";
 import Button from "react-bootstrap/esm/Button";
@@ -7,6 +7,9 @@ import HeaderPage from "../NavBar/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <>
       <HeaderPage />

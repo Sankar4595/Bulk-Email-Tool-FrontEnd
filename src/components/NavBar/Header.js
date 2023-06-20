@@ -21,7 +21,7 @@ const HeaderPage = () => {
               <Nav.Link style={{ color: "white" }} href="/">
                 Home
               </Nav.Link>
-              <Nav.Link href="#action2" style={{ color: "white" }}>
+              <Nav.Link href="/login" style={{ color: "white" }}>
                 Compose
               </Nav.Link>
             </Nav>
