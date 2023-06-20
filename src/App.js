@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import LoginPage from "./components/Auth/LoginPage";
+import SignupPage from "./components/Auth/SignupPage";
+import Dashboard from "./components/Dashboard/Dashboard";
+import HomePage from "./components/Home/HomePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BulkMail from "./components/Mail/BulkMail";
+import ManualMail from "./components/Mail/ManualMail";
+import ForgotPassword from "./components/Auth/ForgotPassword";
+import UserProfile from "./components/Auth/UserProfile";
+import ChartPage from "./components/Chart";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* Authentication Routes  */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+          {/* Dashboard Routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/bulkmail" element={<BulkMail />} />
+          <Route path="/manualmail" element={<ManualMail />} />
+          <Route path="/userprofile" element={<UserProfile />} />
+          <Route path="/chart" element={<ChartPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
