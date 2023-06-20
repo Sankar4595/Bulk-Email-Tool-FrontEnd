@@ -44,8 +44,9 @@ const ManualMail = () => {
   const MailManual = async (val) => {
     try {
       let token = localStorage.getItem("token");
-      let { toEmail, subject, content } = val;
+      let { toEmail, subject, content } = { ...val, toEmail: [val.toEmail] };
       let payload = { token, toEmail, subject, content };
+      console.log(payload);
 
       let res = await axios.post(`${API}/sendmail`, payload);
       // console.log(res);
